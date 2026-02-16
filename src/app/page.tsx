@@ -11,7 +11,7 @@ export default function Home() {
     <AnimatedContainer>
       <section className="pt-12 pb-8">
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-14 h-14 rounded-full bg-bg-tertiary flex items-center justify-center text-xl font-semibold text-text-secondary">
+          <div className="w-14 h-14 rounded-full bg-text-primary flex items-center justify-center text-xl font-semibold text-bg-primary tracking-tight">
             AS
           </div>
           <div>
