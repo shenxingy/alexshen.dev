@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
 import { AnimatedContainer } from "@/components/animated-container";
 import { MDXRemote } from "@/components/mdx-remote";
 
@@ -38,11 +38,7 @@ export default async function BlogPostPage({ params }: Props) {
         <header className="mb-8">
           <h1 className="text-2xl font-semibold mb-2">{post.title}</h1>
           <time className="text-sm text-text-tertiary">
-            {new Date(post.date).toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })}
+            {formatDate(post.date, "long")}
           </time>
         </header>
         <div className="prose">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/constants";
 import { AnimatedContainer } from "@/components/animated-container";
+import { ExternalLinkIcon } from "@/components/external-link-icon";
 
 export const metadata: Metadata = {
   title: "About",
@@ -87,20 +88,7 @@ export default function AboutPage() {
             className="group flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
           >
             GitHub
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-            >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
+            <ExternalLinkIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
           <a
             href={siteConfig.linkedin}
@@ -109,40 +97,14 @@ export default function AboutPage() {
             className="group flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
           >
             LinkedIn
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-            >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
+            <ExternalLinkIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
           <a
             href={`mailto:${siteConfig.email}`}
             className="group flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
           >
             {siteConfig.email}
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-            >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
+            <ExternalLinkIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
       </section>

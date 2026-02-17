@@ -1,4 +1,5 @@
 import type { Project } from "@/lib/constants";
+import { ExternalLinkIcon } from "@/components/external-link-icon";
 
 export function ProjectCard({
   project,
@@ -22,20 +23,7 @@ export function ProjectCard({
           <div className="flex items-center gap-2">
             <h3 className="font-medium text-text-primary">{project.name}</h3>
             {project.url && (
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-text-tertiary group-hover:text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0"
-              >
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
+              <ExternalLinkIcon className="text-text-tertiary group-hover:text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0" />
             )}
           </div>
           <p className="text-sm text-text-secondary mt-1">

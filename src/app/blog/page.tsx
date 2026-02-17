@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts, formatDate } from "@/lib/blog";
 import { AnimatedContainer } from "@/components/animated-container";
 
 export const metadata: Metadata = {
@@ -35,11 +35,7 @@ export default function BlogPage() {
                   {post.title}
                 </span>
                 <time className="text-sm text-text-tertiary whitespace-nowrap">
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
+                  {formatDate(post.date)}
                 </time>
               </div>
               {post.excerpt && (

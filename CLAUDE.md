@@ -4,10 +4,10 @@ Personal website for Alex Shen. Live at [alexshen.dev](https://alexshen.dev).
 
 ## Tech Stack
 
-- **Framework:** Next.js 15 (App Router, Server Components)
+- **Framework:** Next.js 16 (App Router, Server Components)
 - **Styling:** Tailwind CSS v4 (CSS-first config with semantic tokens)
 - **Dark mode:** `next-themes` with `.dark` class strategy
-- **Blog:** `@next/mdx` + `next-mdx-remote` + `gray-matter` for MDX posts
+- **Blog:** `next-mdx-remote` + `gray-matter` for MDX posts
 - **Animations:** `motion` (Framer Motion v12) for page fade-in
 - **Fonts:** Inter (sans, primary) + Source Serif 4 (serif, blog prose) via `next/font/google`
 - **Deploy:** Vercel (auto-deploy from `main` branch)
@@ -43,7 +43,8 @@ src/
 │   ├── theme-toggle.tsx    # Sun/Moon toggle
 │   ├── project-card.tsx    # Card with hover animation + tech pills
 │   ├── animated-container.tsx  # Framer Motion fade-in wrapper
-│   └── mdx-remote.tsx      # MDX string renderer for blog posts
+│   ├── mdx-remote.tsx      # MDX string renderer for blog posts
+│   └── external-link-icon.tsx  # Reusable external link arrow icon
 ├── lib/
 │   ├── constants.ts        # Site config + project data (6 projects)
 │   └── blog.ts             # Read/parse MDX files from content/blog/

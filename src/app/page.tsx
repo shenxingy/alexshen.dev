@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { siteConfig, projects } from "@/lib/constants";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts, formatDate } from "@/lib/blog";
 import { ProjectCard } from "@/components/project-card";
 import { AnimatedContainer } from "@/components/animated-container";
 
@@ -119,11 +119,7 @@ export default function Home() {
                     {post.title}
                   </span>
                   <time className="text-sm text-text-tertiary whitespace-nowrap">
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
+                    {formatDate(post.date)}
                   </time>
                 </div>
                 {post.excerpt && (
