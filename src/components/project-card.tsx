@@ -1,3 +1,5 @@
+"use client";
+
 import type { Project } from "@/lib/constants";
 import { ExternalLinkIcon } from "@/components/external-link-icon";
 
