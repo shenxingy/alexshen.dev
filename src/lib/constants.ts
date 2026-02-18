@@ -26,7 +26,8 @@ export const projects: Project[] = [
     description:
       "Building the core ML infrastructure and full-stack platform for real-time scam detection. Designing and deploying models that process millions of signals daily to protect users from fraud.",
     tech: ["Python", "PyTorch", "FastAPI", "React", "PostgreSQL"],
-    url: "https://get-reality.com",
+    url: "https://scam.ai",
+    github: "https://github.com/scamai",
   },
   {
     name: "FactorySIM",

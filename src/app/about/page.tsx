@@ -18,7 +18,7 @@ export default function AboutPage() {
           <p>
             I&apos;m Alex — a Founding Engineer at{" "}
             <a
-              href="https://get-reality.com"
+              href="https://scam.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-primary underline underline-offset-2 hover:text-accent transition-colors"
