@@ -11,6 +11,9 @@
 - [x] Blog system (MDX + listing + [slug] page)
 - [x] Custom favicon (AS monogram)
 - [x] Deploy to Vercel + connect alexshen.dev domain
+- [x] i18n: EN/ZH with next-intl prefix routing
+- [x] Language switcher in nav
+- [x] Update project list (claude-code-kit, LocalRag, fix MealMates tech)
 
 ## P1 — Content
 

@@ -19,6 +19,26 @@
 - Vercel is migrating to new IP ranges — check project-specific DNS recommendations in Vercel dashboard
 - `next-mdx-remote/rsc` works well for rendering MDX strings in Server Components
 
+## 2026-02-26 — i18n (EN/ZH) + Project List Update
+
+- Added full EN/ZH internationalization with `next-intl` and prefix routing (`/en/`, `/zh/`)
+- Middleware auto-detects browser language, defaults to English
+- All pages moved to `src/app/[locale]/` — stable shareable Chinese URLs (e.g. `alexshen.dev/zh/about`)
+- Language switcher in nav (shows "中" / "EN") uses `router.replace` to keep current path
+- Footer and nav labels translated; bio copy fully translated to Chinese
+- Date formatting is locale-aware (`zh-CN` format for Chinese)
+- Project list refreshed: removed Duke Duber + RTVis, added claude-code-kit + LocalRag, updated MealMates tech stack
+- All 6 projects have `descriptionZh` + `shortDescriptionZh` for Chinese display via `useParams()` in ProjectCard
+
+### Lessons Learned
+
+- next-intl App Router setup: `app/layout.tsx` becomes a thin html/body shell; all providers + nav go into `app/[locale]/layout.tsx`
+- Root layout needs `suppressHydrationWarning` on `<html>` since ThemeProvider changes the class client-side
+- `setRequestLocale(locale)` must be called at the top of every Server Component page for static generation compatibility
+- `hasLocale()` from next-intl is the correct way to validate locale params (replaces manual `.includes()` check)
+- Stale `.next/dev/types/validator.ts` can show false TS errors after deleting old pages — clearing `.next/dev/` resolves it
+- Language switcher: use `router.replace(pathname, { locale: nextLocale })` from next-intl's `createNavigation` — this preserves the current path while swapping locale
+
 ## 2026-02-17 — Tech Debt Review & Cleanup
 
 - Ran `/review` skill, found and fixed all issues in one session
