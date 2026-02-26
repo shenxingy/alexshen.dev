@@ -7,7 +7,7 @@ export const siteConfig = {
   tagline: "Founding Engineer at Scam AI",
   email: "alex@get-reality.com",
   github: "https://github.com/shenxingy",
-  linkedin: "https://linkedin.com/in/alexshenxy",
+  linkedin: "https://www.linkedin.com/in/xingyu-shen-duke/",
 };
 
 export interface Project {
