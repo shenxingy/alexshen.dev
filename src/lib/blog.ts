@@ -14,11 +14,13 @@ export interface BlogPost {
 
 export function formatDate(
   date: string,
-  style: "short" | "long" = "short"
+  style: "short" | "long" = "short",
+  locale: string = "en"
 ): string {
   const d = new Date(date);
   if (isNaN(d.getTime())) return "";
-  return d.toLocaleDateString("en-US", {
+  const localeCode = locale === "zh" ? "zh-CN" : "en-US";
+  return d.toLocaleDateString(localeCode, {
     month: style,
     day: "numeric",
     year: "numeric",

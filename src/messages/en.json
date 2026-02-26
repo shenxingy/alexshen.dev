@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "about": "About"
+  },
+  "home": {
+    "projects": "Projects",
+    "writing": "Writing",
+    "viewAll": "View all →"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Things I've built and contributed to."
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Thoughts, learnings, and things I find interesting.",
+    "noPosts": "No posts yet. Stay tuned."
+  },
+  "about": {
+    "title": "About",
+    "bio1": "I'm Alex — a Founding Engineer at Scam AI, where I build ML systems and full-stack products to combat online fraud. I work across the stack — from training models and designing data pipelines to shipping user-facing features.",
+    "bio2": "Before this, I studied at Duke University where I explored the intersection of computer science and machine learning. I'm drawn to problems that require both technical depth and product thinking.",
+    "bio3": "Outside of work, I like building side projects, exploring new tools, and occasionally writing about things I've learned.",
+    "experience": "Experience",
+    "education": "Education",
+    "connect": "Connect"
+  },
+  "footer": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  },
+  "notFound": {
+    "message": "This page doesn't exist.",
+    "goHome": "Go home →"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "首页",
+    "projects": "项目",
+    "blog": "博客",
+    "about": "关于"
+  },
+  "home": {
+    "projects": "项目",
+    "writing": "文章",
+    "viewAll": "查看全部 →"
+  },
+  "projects": {
+    "title": "项目",
+    "description": "我做过的一些东西。"
+  },
+  "blog": {
+    "title": "博客",
+    "description": "分享一些想法和我学到的东西。",
+    "noPosts": "暂无文章，敬请期待。"
+  },
+  "about": {
+    "title": "关于",
+    "bio1": "我是 Alex，Scam AI 的创始工程师，负责构建 ML 系统和全栈产品，帮助用户抵御网络诈骗。我全栈作业——从训练模型、设计数据管道，到开发面向用户的功能。",
+    "bio2": "此前我就读于杜克大学，专注于计算机科学与机器学习的交叉领域。我热衷于那些既需要技术深度又需要产品思维的问题。",
+    "bio3": "业余时间，我喜欢做个人项目、探索新工具，偶尔写写学到的东西。",
+    "experience": "经历",
+    "education": "教育",
+    "connect": "联系"
+  },
+  "footer": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "邮件"
+  },
+  "notFound": {
+    "message": "这个页面不存在。",
+    "goHome": "回到首页 →"
+  }
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useParams } from "next/navigation";
 import type { Project } from "@/lib/constants";
 import { ExternalLinkIcon } from "@/components/external-link-icon";
 
@@ -10,6 +11,18 @@ export function ProjectCard({
   project: Project;
   expanded?: boolean;
 }) {
+  const params = useParams();
+  const locale = (params?.locale as string) ?? "en";
+
+  const shortDesc =
+    locale === "zh" && project.shortDescriptionZh
+      ? project.shortDescriptionZh
+      : project.shortDescription;
+  const fullDesc =
+    locale === "zh" && project.descriptionZh
+      ? project.descriptionZh
+      : project.description;
+
   const Wrapper = project.url ? "a" : "div";
   const wrapperProps = project.url
     ? { href: project.url, target: "_blank", rel: "noopener noreferrer" }
@@ -43,7 +56,7 @@ export function ProjectCard({
             )}
           </div>
           <p className="text-sm text-text-secondary mt-1">
-            {expanded ? project.description : project.shortDescription}
+            {expanded ? fullDesc : shortDesc}
           </p>
           {expanded && (
             <div className="flex flex-wrap gap-1.5 mt-3">
