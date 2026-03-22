@@ -76,6 +76,7 @@ export const projects: Project[] = [
       "一套脚本、钩子和工作流，让 Claude Code 在自主开发和团队协作场景中大幅提效。包括提交自动化、会话交接、并行 Agent 编排和项目文档规范。",
     tech: ["Shell", "TypeScript", "Claude Code", "Next.js"],
     github: "https://github.com/shenxingy/claude-code-kit",
+    blogSlug: "claude-code-kit",
     year: "2026",
   },
   {
