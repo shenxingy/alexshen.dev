@@ -1,0 +1,77 @@
+---
+title: "I Built a Map to Figure Out Where I Could Work on H1B"
+date: "2026-03-21"
+excerpt: "The DOL has all the data you need. It just gives you a spreadsheet with 50,000 rows. So I built an interactive map instead — and it actually helped me (and a few friends) decide where to live."
+---
+
+H1B lottery results drop in March. If you get selected, you have a few months to figure out your visa situation before October 1st. One of the first questions is: *where can I actually work?*
+
+The H1B requires your employer to pay you at least the **prevailing wage** for your role in the specific metro area where you'll be working. This isn't a single number — it varies by city, job category, and wage level. A Software Developer L2 in San Francisco has a different floor than the same role in Austin or Raleigh.
+
+The Department of Labor publishes all of this data. The problem is how they publish it.
+
+## The DOL website
+
+Go to the [DOL's OFLC wage search tool](https://www.dol.gov/agencies/eta/foreign-labor/wage-data/wage-library) and you get a searchable table. Fifty thousand rows. One metro area at a time. No way to ask "given my salary and job title, which cities work for me?"
+
+You end up doing this manually:
+- Pick a city you're curious about
+- Look up your SOC code
+- Find the prevailing wage for your level
+- Compare it to your offer
+- Repeat for the next city
+
+If you're trying to evaluate 10+ cities — which anyone considering a job change or relocation should — this takes hours and the results don't stick together anywhere.
+
+## The data is public. It just needs a UI.
+
+The DOL publishes the full prevailing wage database as a downloadable file. 530 metro statistical areas (MSAs), every major job category, four wage levels. It's updated twice a year.
+
+The Census Bureau publishes CBSA boundary shapefiles — the geographic outlines of each MSA.
+
+Put these two together and you can build a choropleth map: color each metro area by how much headroom you have above the prevailing wage floor, given your specific salary and job.
+
+That's H1B Compass.
+
+## How it works
+
+Enter three things:
+- **Your salary** (slider, $50k–$300k)
+- **Your job category** (SOC code — Software Developer, Data Scientist, DevOps, etc.)
+- **Your wage level** (L1 through L4, roughly mapping to percentile bands)
+
+The map immediately colors every MSA:
+
+- **Green** — large surplus (>$40k above prevailing wage)
+- **Yellow/Orange** — tight but qualifies
+- **Red** — below the prevailing wage floor for your inputs
+
+There's also a drive-zone filter: pick a city (SF, Seattle, NYC, Austin, and others) and a radius in miles, and the map dims everything outside that circle. This was useful for cases like "I want to be within driving distance of family in the Bay Area — what qualifies nearby?"
+
+The filters live in the URL (`?salary=160000&soc=15-1252&level=L2&origin=...`), so you can share your exact setup with someone else — which turned out to be more useful than I expected.
+
+## Actually using it
+
+I built this during H1B season when my own lottery result came in. I had an offer with a specific salary, I knew my SOC code, and I needed to think through where the role could be based.
+
+Within a few minutes I had a map showing exactly which metro areas worked for me, colored by how comfortable the margin was. Green cities felt safe. Orange ones made me want to double-check. Red ones were ruled out immediately.
+
+I ended up sharing the link with a few friends who were going through the same process — adjusting the salary slider to their numbers, switching between wage levels, zooming into different regions. A few of them told me it helped them make their final call on where to live.
+
+That was the validation I didn't expect: not just that it worked technically, but that it was actually useful for a real decision.
+
+## What I'd add
+
+A few things I considered but didn't build:
+
+**Actual drive time instead of radius.** I started with isochrone maps (real routing) but switched to haversine distance (straight-line) because it's good enough for this use case and doesn't require an external API. For most H1B purposes, "within 300 miles" is close enough to "driveable."
+
+**Employer wage data.** The LCA disclosure data (what companies actually paid) would be more useful than prevailing wage floors in some cases. The data exists but it's messier to process.
+
+**Historical trends.** Prevailing wages shift each fiscal year. Seeing how a city's floor has changed over time could be interesting for longer-term planning.
+
+---
+
+If you're working through H1B planning, the tool is live at [h1b.alexshen.dev](https://h1b.alexshen.dev). The wage data covers July 2025 – June 2026. It's free, no login required.
+
+The [source is on GitHub](https://github.com/shenxingy/h1b-compass) if you want to dig into the data pipeline or run it locally.
