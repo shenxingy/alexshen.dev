@@ -40,13 +40,13 @@ export const projects: Project[] = [
     year: "2026",
   },
   {
-    name: "inkWEAVE",
+    name: "InkWeave",
     shortDescription: "Notes-first AI structuring tool for bilingual knowledge workers",
     shortDescriptionZh: "以笔记为核心的双语 AI 文档结构化工具",
     description:
-      "Every AI meeting tool follows the same pattern: transcript → summary. inkWEAVE is different — your notes capture your thinking, the transcript fills the gaps, and Claude synthesizes them into a structured document that reflects how you reason. Built for bilingual (Chinese + English) meetings, with real-time transcription, speaker diarization, 10+ output templates, and cross-meeting Q&A.",
+      "Every AI meeting tool follows the same pattern: transcript → summary. InkWeave is different — your notes capture your thinking, the transcript fills the gaps, and Claude synthesizes them into a structured document that reflects how you reason. Built for bilingual (Chinese + English) meetings, with real-time transcription, speaker diarization, 10+ output templates, and cross-meeting Q&A.",
     descriptionZh:
-      "所有 AI 会议工具都遵循同一套路：转录 → 摘要。inkWEAVE 不同——你的笔记记录你的思路，转录稿填补空白，Claude 将两者合成为一份反映你思维方式的结构化文档。专为中英双语会议设计，支持实时转录、说话人分离、10+ 输出模板和跨会议问答。",
+      "所有 AI 会议工具都遵循同一套路：转录 → 摘要。InkWeave 不同——你的笔记记录你的思路，转录稿填补空白，Claude 将两者合成为一份反映你思维方式的结构化文档。专为中英双语会议设计，支持实时转录、说话人分离、10+ 输出模板和跨会议问答。",
     tech: ["Next.js", "FastAPI", "Whisper", "Claude", "Vditor", "Docker"],
     url: "https://inkweave.alexshen.dev",
     year: "2025",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     year: "2024",
   },
   {
-    name: "claude-code-kit",
+    name: "Claude Code Kit",
     shortDescription: "Productivity toolkit for Claude Code power users",
     shortDescriptionZh: "Claude Code 高级用户生产力工具包",
     description:
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     tech: ["Turborepo", "tRPC", "Expo", "Drizzle", "Supabase"],
   },
   {
-    name: "LocalRag",
+    name: "LocalRAG",
     shortDescription: "Local-first RAG pipeline for private document Q&A",
     shortDescriptionZh: "本地优先的私有文档问答 RAG 管道",
     description:
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     github: "https://github.com/shenxingy/local-rag",
   },
   {
-    name: "VoxBlink-CN",
+    name: "VoxBlink CN",
     shortDescription: "Large-scale Chinese audio-visual speaker dataset",
     shortDescriptionZh: "大规模中文视听说话人数据集",
     description:
