@@ -49,19 +49,21 @@ export const projects: Project[] = [
       "所有 AI 会议工具都遵循同一套路：转录 → 摘要。InkWeave 不同——你的笔记记录你的思路，转录稿填补空白，Claude 将两者合成为一份反映你思维方式的结构化文档。专为中英双语会议设计，支持实时转录、说话人分离、10+ 输出模板和跨会议问答。",
     tech: ["Next.js", "FastAPI", "Whisper", "Claude", "Vditor", "Docker"],
     url: "https://inkweave.alexshen.dev",
+    blogSlug: "inkweave",
     year: "2025",
   },
   {
     name: "Scam AI",
-    shortDescription: "AI-powered scam detection and prevention platform",
-    shortDescriptionZh: "AI 驱动的诈骗检测与防范平台",
+    shortDescription: "Opinionated landing page for an AI security company — many iterations",
+    shortDescriptionZh: "AI 安全公司的有风格 Landing Page，历经多次迭代",
     description:
-      "Building the core ML infrastructure and full-stack platform for real-time scam detection. Designing and deploying models that process millions of signals daily to protect users from fraud.",
+      "Multiple complete redesigns chasing one goal: a landing page that doesn't look like every other AI startup. Experiments with Bento grids, dark hero sections, newsletter CMS, problem-first narrative, and hero video — learning what actually converts versus what just looks good in Figma.",
     descriptionZh:
-      "构建核心 ML 基础设施与全栈平台，实现实时诈骗检测。设计并部署每日处理数百万信号的模型，保护用户免受欺诈侵害。",
-    tech: ["Python", "PyTorch", "FastAPI", "React", "PostgreSQL"],
+      "多次完整重设计，目标只有一个：做出有辨识度的 AI 安全公司官网。历经 Bento 网格、暗色 Hero、Newsletter CMS、问题先行叙事等多种尝试，摸清了什么真正有效、什么只是在 Figma 里好看。",
+    tech: ["Next.js", "Tailwind", "Framer Motion", "Neon", "Vercel"],
     url: "https://scam.ai",
-    github: "https://github.com/scamai",
+    github: "https://github.com/aptxaptx/scamai-landing",
+    blogSlug: "scamai-landing",
     year: "2024",
   },
   {

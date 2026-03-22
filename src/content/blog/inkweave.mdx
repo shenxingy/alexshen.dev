@@ -1,0 +1,74 @@
+---
+title: "Why I Built My Own Note-Taking Tool"
+date: "2026-03-21"
+excerpt: "Notes live in five different apps. Meetings happen across three platforms. And none of them talk to each other. So I built InkWeave."
+---
+
+## The problem with notes
+
+My notes are everywhere.
+
+Class notes in Notion. Meeting minutes in a 飞书 doc that's technically owned by my company. Voice memos on my phone from a 腾讯会议 call. A paper notebook for the stuff I think better on paper. A half-filled Obsidian vault I keep meaning to get back to.
+
+None of it is in one place. None of it connects. And when I need to reference what someone said two weeks ago in a project kickoff, I'm digging through four apps and still not finding it.
+
+This isn't a personal failure. It's a structural problem with how meeting and note-taking tools are built: each one is locked to its own ecosystem. 飞书 only records 飞书 meetings. 腾讯会议 only processes 腾讯会议. Granola only works on Mac. None of them handle mixed Chinese-English conversations without degrading.
+
+Chinese professionals average 3–5 communication platforms per day. There's no unified tool — so notes stay fragmented by necessity.
+
+## The existing tools miss something
+
+Granola is the closest thing to what I wanted. It listens to your meeting and produces AI notes afterward. The experience is genuinely good — no bots, no interruptions, just background recording.
+
+But it has a fundamental design assumption baked in: **the transcript is the primary input**. Your notes are an afterthought. The output is a summary of what was said, not a document that reflects how you think.
+
+In practice, this breaks down for me in two ways:
+
+First, the quality ceiling. A summary of a transcript is only as good as what was said out loud. But meetings don't capture everything — context lives in the preparation notes, the pre-read, the decision criteria I'd written down before the call started. Granola has no way to incorporate any of that.
+
+Second, Chinese support is weak. Mixed Chinese-English meetings — where you switch mid-sentence — degrade the experience significantly. Formulas don't render. Slash commands break Chinese input. The editor assumes English-only workflows.
+
+## A different philosophy
+
+InkWeave starts from the opposite assumption: **your notes are the primary input, the transcript fills in what you missed**.
+
+```
+Granola:   transcript → AI summary
+InkWeave:  your notes + transcript → AI synthesis → structured document
+```
+
+This unlocks something important. The AI isn't just organizing what was said — it's connecting what was said to what you were already thinking. The result reflects how you reason, not just what happened in the room.
+
+It also means InkWeave works in three modes:
+
+- **Notes only** — paste rough notes, get a structured document (no audio needed)
+- **Audio only** — upload a recording, works like a better Granola
+- **Notes + audio** — highest quality output, the mode it was designed for
+
+## What I built
+
+The editor is Obsidian-style: Markdown-first, with KaTeX math rendering and Mermaid diagram blocks. No formatting bugs on Chinese input. Image paste works. It's a real editor, not a text box.
+
+For audio, there are two paths. Upload a file and it runs through Whisper (with a local faster-whisper backend for Chinese accuracy). Or record directly in the browser with live transcription and speaker diarization — so the output knows who said what.
+
+After transcription, you pick a template and hit Generate. Claude reads both your notes and the transcript together, then produces a structured output matching the template: meeting minutes, class notes, interview evaluation, advisor discussion, project summary, or a custom schema you define.
+
+The templates are Claude system prompts, so adding a new one is just writing a prompt. Users can define their own.
+
+## The things that were hard
+
+**Bilingual ASR** was harder than expected. Whisper handles Chinese well in isolation, but real meetings mix languages mid-sentence. We evaluated 讯飞 ASR and 阿里 ASR alongside Whisper. Faster-whisper with a tuned model ended up winning for accuracy-per-cost on real mixed recordings.
+
+**The editor-transcript split** was a UX design problem more than a technical one. How do you show two inputs (notes + transcript) without making the interface feel like two separate tools? The current answer: the editor is primary, the transcript lives in a collapsible panel. Generate connects them invisibly.
+
+**Template design** took more iteration than I expected. "Meeting notes" sounds simple until you have to define what structure actually helps people remember and act on what happened. The best templates turned out to be opinionated: they extract decisions, action items, and open questions explicitly, rather than just summarizing sections.
+
+## What's next
+
+The web app is deployed and running. The next phase is the one that makes this genuinely magical: a desktop app (Tauri) that captures system audio silently — no upload, no recording button, just open 腾讯会议 or 飞书 and InkWeave is listening.
+
+That's the version where you end a meeting, switch to InkWeave, and your structured notes are already there.
+
+---
+
+If you want to try it, it's live at [inkweave.alexshen.dev](https://inkweave.alexshen.dev). Accounts are free. If you're a bilingual knowledge worker who's tired of fragmented notes, I'd genuinely like to know if it helps.
