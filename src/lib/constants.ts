@@ -23,6 +23,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "H1B Compass",
+    shortDescription: "Interactive map for finding H1B worksites by DOL prevailing wage",
+    shortDescriptionZh: "按 DOL 工资要求筛选 H1B 工作地点的交互地图",
+    description:
+      "Built during H1B lottery season when I needed to find eligible worksites — but the official DOL website offers no useful filtering. Enter your salary, job category, and wage level: the map instantly highlights which metro areas qualify, colored by your wage surplus. Add a drive-zone filter to narrow results to areas within a given radius of any city.",
+    descriptionZh:
+      "H1B 抽签季，我需要找符合 DOL 工资要求的工作地点，但官网几乎无法有效筛选。于是做了这个工具：输入薪资、职位类别和工资等级，地图立即高亮所有符合条件的都市区，并按薪资盈余着色。还可以设定驾车范围，聚焦特定城市周边的区域。",
+    tech: ["Next.js", "React", "Leaflet", "Tailwind", "Vercel"],
+    url: "https://h1b.alexshen.dev",
+    github: "https://github.com/shenxingy/h1b-compass",
+  },
+  {
     name: "Scam AI",
     shortDescription: "AI-powered scam detection and prevention platform",
     shortDescriptionZh: "AI 驱动的诈骗检测与防范平台",
