@@ -14,7 +14,7 @@ export default async function Home({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
-  const recentPosts = getAllPosts().slice(0, 3);
+  const recentPosts = getAllPosts(locale).slice(0, 3);
 
   return (
     <AnimatedContainer>
@@ -25,7 +25,7 @@ export default async function Home({ params }: Props) {
           </div>
           <div>
             <h1 className="text-xl font-semibold">{siteConfig.name}</h1>
-            <p className="text-text-secondary">{siteConfig.tagline}</p>
+            <p className="text-text-secondary">{t("tagline")}</p>
           </div>
         </div>
 
