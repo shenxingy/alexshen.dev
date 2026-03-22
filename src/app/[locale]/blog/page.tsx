@@ -23,7 +23,7 @@ export default async function BlogPage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("blog");
-  const posts = getAllPosts();
+  const posts = getAllPosts(locale);
 
   return (
     <AnimatedContainer>

@@ -11,13 +11,15 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+  const enPosts = getAllPosts("en");
+  const zhPosts = getAllPosts("zh");
+  const slugs = new Set([...enPosts.map((p) => p.slug), ...zhPosts.map((p) => p.slug)]);
+  return Array.from(slugs).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const { slug, locale } = await params;
+  const post = getPostBySlug(slug, locale);
   if (!post) return {};
 
   return {
@@ -30,7 +32,7 @@ export default async function BlogPostPage({ params }: Props) {
   const { slug, locale } = await params;
   setRequestLocale(locale);
 
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(slug, locale);
 
   if (!post) {
     notFound();

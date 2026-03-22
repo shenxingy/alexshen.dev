@@ -33,14 +33,32 @@ function parseDate(raw: unknown): string {
   return isNaN(d.getTime()) ? "" : String(raw);
 }
 
-export function getAllPosts(): BlogPost[] {
+export function getAllPosts(locale: string = "en"): BlogPost[] {
   if (!fs.existsSync(contentDir)) return [];
 
-  const files = fs.readdirSync(contentDir).filter((f) => f.endsWith(".mdx"));
+  const suffix = `.${locale}.mdx`;
+  const fallbackSuffix = ".en.mdx";
+  const allFiles = fs.readdirSync(contentDir);
+
+  // Get locale-specific files
+  const localeFiles = allFiles.filter((f) => f.endsWith(suffix));
+  const localeSlugs = new Set(localeFiles.map((f) => f.replace(suffix, "")));
+
+  // Fall back to English for posts without a translation
+  const fallbackFiles =
+    locale !== "en"
+      ? allFiles.filter(
+          (f) =>
+            f.endsWith(fallbackSuffix) &&
+            !localeSlugs.has(f.replace(fallbackSuffix, ""))
+        )
+      : [];
+
+  const files = [...localeFiles, ...fallbackFiles];
 
   const posts = files
     .map((filename) => {
-      const slug = filename.replace(/\.mdx$/, "");
+      const slug = filename.replace(/\.\w+\.mdx$/, "");
       const filePath = path.join(contentDir, filename);
       const fileContent = fs.readFileSync(filePath, "utf-8");
       const { data, content } = matter(fileContent);
@@ -63,12 +81,14 @@ export function getAllPosts(): BlogPost[] {
 export function slugify(text: string): string {
   return text
     .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
+    .replace(/[^\w\u4e00-\u9fff\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-");
 }
 
-export function extractHeadings(content: string): { text: string; id: string }[] {
+export function extractHeadings(
+  content: string
+): { text: string; id: string }[] {
   const regex = /^## (.+)$/gm;
   const headings: { text: string; id: string }[] = [];
   let match;
@@ -79,9 +99,16 @@ export function extractHeadings(content: string): { text: string; id: string }[]
   return headings;
 }
 
-export function getPostBySlug(slug: string): BlogPost | null {
-  const filePath = path.join(contentDir, `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) return null;
+export function getPostBySlug(
+  slug: string,
+  locale: string = "en"
+): BlogPost | null {
+  // Try locale-specific file first, fall back to English
+  let filePath = path.join(contentDir, `${slug}.${locale}.mdx`);
+  if (!fs.existsSync(filePath)) {
+    filePath = path.join(contentDir, `${slug}.en.mdx`);
+    if (!fs.existsSync(filePath)) return null;
+  }
 
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
