@@ -11,6 +11,18 @@ export const siteConfig = {
   scholar: "https://scholar.google.com/citations?user=jVOQ8D0AAAAJ&hl=en",
 };
 
+export interface ProjectCategory {
+  id: string;
+  label: string;
+  labelZh: string;
+}
+
+export const projectCategories: ProjectCategory[] = [
+  { id: "product", label: "Apps & Products", labelZh: "应用与产品" },
+  { id: "tooling", label: "Developer Tools", labelZh: "开发者工具" },
+  { id: "research", label: "Research", labelZh: "学术研究" },
+];
+
 export interface Project {
   name: string;
   description: string;
@@ -22,6 +34,7 @@ export interface Project {
   github?: string;
   blogSlug?: string;
   year?: string;
+  category?: string;
 }
 
 export const projects: Project[] = [
@@ -38,6 +51,7 @@ export const projects: Project[] = [
     github: "https://github.com/shenxingy/h1b-compass",
     blogSlug: "h1b-compass",
     year: "2026",
+    category: "product",
   },
   {
     name: "InkWeave",
@@ -50,7 +64,8 @@ export const projects: Project[] = [
     tech: ["Next.js", "FastAPI", "Whisper", "Claude", "Vditor", "Docker"],
     url: "https://inkweave.alexshen.dev",
     blogSlug: "inkweave",
-    year: "2025",
+    year: "2026",
+    category: "product",
   },
   {
     name: "Scam AI",
@@ -64,7 +79,8 @@ export const projects: Project[] = [
     url: "https://scam.ai",
     github: "https://github.com/aptxaptx/scamai-landing",
     blogSlug: "scamai-landing",
-    year: "2024",
+    year: "2025",
+    category: "product",
   },
   {
     name: "Claude Code Kit",
@@ -78,27 +94,46 @@ export const projects: Project[] = [
     github: "https://github.com/shenxingy/claude-code-kit",
     blogSlug: "claude-code-kit",
     year: "2026",
+    category: "tooling",
+  },
+  {
+    name: "AI AP Manager",
+    shortDescription: "AI-native accounts payable automation for manufacturing enterprises",
+    shortDescriptionZh: "面向制造业的 AI 应付账款自动化平台",
+    description:
+      "End-to-end AP automation: invoice ingestion, OCR extraction, 2/3/4-way PO matching, exception handling, and approval workflows. A deterministic rule engine owns every approve/reject decision — Claude handles OCR correction, policy parsing, and exception narration.",
+    descriptionZh:
+      "端到端应付账款自动化：发票录入、OCR 提取、二/三/四路采购订单匹配、异常处理与审批工作流。确定性规则引擎掌管每一个审批决策；Claude 负责 OCR 纠正、政策解析与异常说明。",
+    tech: ["FastAPI", "Next.js", "Claude", "PostgreSQL", "Docker"],
+    github: "https://github.com/shenxingy/ai-ap-manager",
+    year: "2026",
+    category: "product",
   },
   {
     name: "MealMates",
     shortDescription: "Social meal planning and recipe sharing app",
     shortDescriptionZh: "社交化餐食规划与食谱分享应用",
     description:
-      "A social platform connecting people through shared meals. Features collaborative meal planning, recipe sharing, and real-time updates built on a modern monorepo stack.",
+      "A social platform connecting people through shared meals. Features collaborative meal planning, recipe sharing, and real-time updates built on a modern monorepo stack — React Native (Expo) for mobile, Next.js for web, tRPC for typesafe APIs end-to-end.",
     descriptionZh:
-      "通过共同用餐连接人与人的社交平台。支持协作式餐食规划、食谱分享和实时更新，基于现代 Monorepo 架构构建。",
+      "通过共同用餐连接人与人的社交平台。支持协作式餐食规划、食谱分享和实时更新，基于 Monorepo 架构：React Native (Expo) 移动端，Next.js Web 端，tRPC 全链路类型安全。",
     tech: ["Turborepo", "tRPC", "Expo", "Drizzle", "Supabase"],
+    github: "https://github.com/shenxingy/MealMates",
+    year: "2025",
+    category: "product",
   },
   {
     name: "LocalRAG",
-    shortDescription: "Local-first RAG pipeline for private document Q&A",
-    shortDescriptionZh: "本地优先的私有文档问答 RAG 管道",
+    shortDescription: "Local-first RAG with memo-priority and chain-of-thought conflict resolution",
+    shortDescriptionZh: "本地优先 RAG，支持备忘录优先与思维链冲突解决",
     description:
-      "A fully local retrieval-augmented generation system for querying private documents. Runs entirely on-device with no data leaving the machine — uses local embeddings, vector search, and an LLM backend.",
+      "A fully local RAG system with a \"memo-first\" strategy — when an authoritative memo conflicts with other documents, the system prioritizes it. Chain-of-thought prompting guides the LLM through conflict resolution. Runs on Ollama with ChromaDB vector search; no data leaves the device.",
     descriptionZh:
-      "完全本地化的检索增强生成系统，用于查询私有文档。数据不离设备，使用本地嵌入、向量检索和本地 LLM 后端。",
-    tech: ["Python", "LlamaIndex", "Ollama", "FAISS"],
-    github: "https://github.com/shenxingy/local-rag",
+      "完全本地化的 RAG 系统，实现「权威备忘录优先」策略——备忘录与其他文档冲突时，系统优先采信备忘录。思维链提示引导 LLM 完成冲突裁定。运行于 Ollama，ChromaDB 向量检索，数据不离设备。",
+    tech: ["Python", "LangChain", "ChromaDB", "Ollama"],
+    github: "https://github.com/shenxingy/LocalRag",
+    year: "2025",
+    category: "tooling",
   },
   {
     name: "VoxBlink CN",
@@ -109,15 +144,47 @@ export const projects: Project[] = [
     descriptionZh:
       "参与构建大规模中文视听说话人识别数据集。开发数据采集管道和质量保障工具，处理数千小时视频数据。",
     tech: ["Python", "FFmpeg", "Data Pipelines", "Computer Vision"],
+    github: "https://github.com/shenxingy/VoxBlink-CN",
+    year: "2025",
+    category: "research",
+  },
+  {
+    name: "CDN Multi-Metric Selection",
+    shortDescription: "CDN server selection research — multi-metric scoring beats RTT-only baselines",
+    shortDescriptionZh: "CDN 服务器选择研究 — 多指标评分优于纯 RTT 基准",
+    description:
+      "Duke research project: demonstrates that combining RTT, TTFB, and packet loss in a lightweight composite score consistently improves CDN server selection over RTT-only baselines. Validated on RIPE Atlas and M-Lab real-world datasets.",
+    descriptionZh:
+      "Duke 研究项目：将 RTT、TTFB 与丢包率组合为轻量复合评分，证明多指标 CDN 服务器选择持续优于单纯 RTT 方案。在 RIPE Atlas 和 M-Lab 真实数据集上验证。",
+    tech: ["Python", "RIPE Atlas", "M-Lab", "scikit-learn"],
+    github: "https://github.com/shenxingy/cdn-multimetric-selection",
+    year: "2025",
+    category: "research",
+  },
+  {
+    name: "RTVis",
+    shortDescription: "Research trend visualization — co-occurrence networks, citation charts, word frequency races",
+    shortDescriptionZh: "学术趋势可视化 — 合作网络、引用图表、词频竞赛",
+    description:
+      "Research Trend Visualization toolkit: upload an academic dataset and explore author co-occurrence networks, citation bar charts, word frequency races, and field theme rivers. Helps researchers orient in a new field before starting a project. Open-source with Docker deploy.",
+    descriptionZh:
+      "学术趋势可视化工具包：上传学术数据集，探索作者合作网络、引用柱状图、词频竞赛与领域主题河流图。帮助研究者在开始新项目前快速了解领域全貌。开源，支持 Docker 部署。",
+    tech: ["Python", "Plotly", "Pandas", "Docker"],
+    github: "https://github.com/RTVis/RTVis",
+    year: "2023",
+    category: "research",
   },
   {
     name: "FactorySIM",
-    shortDescription: "Multi-agent simulation for manufacturing optimization",
-    shortDescriptionZh: "多智能体制造优化仿真框架",
+    shortDescription: "Java factory simulation — production, logistics, and drone delivery",
+    shortDescriptionZh: "Java 工厂仿真 — 生产、物流与无人机配送",
     description:
-      "A multi-agent simulation framework for modeling and optimizing manufacturing workflows. Uses reinforcement learning to discover efficient production schedules and resource allocation strategies.",
+      "A Java-based factory simulation modeling industrial resource chains: mines, factories, storage facilities, and drone ports connected by configurable routing policies. Supports interactive command control, server-backed save/load, and a separate GUI client. Built as a Duke course project.",
     descriptionZh:
-      "用于建模和优化制造工作流程的多智能体仿真框架。利用强化学习探索高效的生产调度和资源分配策略。",
-    tech: ["Python", "PyTorch", "Multi-Agent RL", "Simulation"],
+      "基于 Java 的工厂仿真系统，模拟工业资源链：矿山、工厂、仓库与无人机港口通过可配置路由策略互联。支持交互式命令控制、服务端存档，以及独立 GUI 客户端。Duke 课程项目。",
+    tech: ["Java", "Gradle", "Client-Server", "Simulation"],
+    github: "https://github.com/factorysim-duke/factorysim",
+    year: "2025",
+    category: "research",
   },
 ];
