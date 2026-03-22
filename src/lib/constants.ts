@@ -36,6 +36,17 @@ export const projects: Project[] = [
     github: "https://github.com/shenxingy/h1b-compass",
   },
   {
+    name: "inkWEAVE",
+    shortDescription: "Notes-first AI structuring tool for bilingual knowledge workers",
+    shortDescriptionZh: "以笔记为核心的双语 AI 文档结构化工具",
+    description:
+      "Every AI meeting tool follows the same pattern: transcript → summary. inkWEAVE is different — your notes capture your thinking, the transcript fills the gaps, and Claude synthesizes them into a structured document that reflects how you reason. Built for bilingual (Chinese + English) meetings, with real-time transcription, speaker diarization, 10+ output templates, and cross-meeting Q&A.",
+    descriptionZh:
+      "所有 AI 会议工具都遵循同一套路：转录 → 摘要。inkWEAVE 不同——你的笔记记录你的思路，转录稿填补空白，Claude 将两者合成为一份反映你思维方式的结构化文档。专为中英双语会议设计，支持实时转录、说话人分离、10+ 输出模板和跨会议问答。",
+    tech: ["Next.js", "FastAPI", "Whisper", "Claude", "Vditor", "Docker"],
+    url: "https://inkweave.alexshen.dev",
+  },
+  {
     name: "Scam AI",
     shortDescription: "AI-powered scam detection and prevention platform",
     shortDescriptionZh: "AI 驱动的诈骗检测与防范平台",
