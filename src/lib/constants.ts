@@ -19,8 +19,9 @@ export interface ProjectCategory {
 
 export const projectCategories: ProjectCategory[] = [
   { id: "product", label: "Apps & Products", labelZh: "应用与产品" },
-  { id: "tooling", label: "Developer Tools", labelZh: "开发者工具" },
+  { id: "tooling", label: "Open Source", labelZh: "开源工具" },
   { id: "research", label: "Research", labelZh: "学术研究" },
+  { id: "course", label: "Course Projects", labelZh: "课程项目" },
 ];
 
 export interface Project {
@@ -172,19 +173,19 @@ export const projects: Project[] = [
     tech: ["Python", "Plotly", "Pandas", "Docker"],
     github: "https://github.com/RTVis/RTVis",
     year: "2023",
-    category: "research",
+    category: "tooling",
   },
   {
     name: "FactorySIM",
-    shortDescription: "Java factory simulation — production, logistics, and drone delivery",
-    shortDescriptionZh: "Java 工厂仿真 — 生产、物流与无人机配送",
+    shortDescription: "Factory builder game — place mines, factories, and drone ports to optimize resource flow",
+    shortDescriptionZh: "工厂建造游戏 — 放置矿山、工厂与无人机港，优化资源流转",
     description:
-      "A Java-based factory simulation modeling industrial resource chains: mines, factories, storage facilities, and drone ports connected by configurable routing policies. Supports interactive command control, server-backed save/load, and a separate GUI client. Built as a Duke course project.",
+      "A factory builder game: place mines, factories, storage facilities, and drone ports, connect them with paths, and watch resources flow. Built as a Duke course project with a CLI core, libGDX GUI client, and server-backed save/load.",
     descriptionZh:
-      "基于 Java 的工厂仿真系统，模拟工业资源链：矿山、工厂、仓库与无人机港口通过可配置路由策略互联。支持交互式命令控制、服务端存档，以及独立 GUI 客户端。Duke 课程项目。",
-    tech: ["Java", "Gradle", "Client-Server", "Simulation"],
+      "工厂建造游戏：放置矿山、工厂、仓库与无人机港并连接路径，观察资源自动流转。Duke 课程项目，包含命令行核心、libGDX 图形客户端和服务端存档。",
+    tech: ["Java", "libGDX", "Gradle", "Client-Server"],
     github: "https://github.com/factorysim-duke/factorysim",
     year: "2025",
-    category: "research",
+    category: "course",
   },
 ];
