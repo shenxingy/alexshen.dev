@@ -28,6 +28,14 @@ export function Footer() {
             {t("linkedin")}
           </a>
           <a
+            href={siteConfig.scholar}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-text-secondary transition-colors"
+          >
+            {t("scholar")}
+          </a>
+          <a
             href={`mailto:${siteConfig.email}`}
             className="hover:text-text-secondary transition-colors"
           >

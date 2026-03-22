@@ -8,6 +8,7 @@ export const siteConfig = {
   email: "alex@get-reality.com",
   github: "https://github.com/shenxingy",
   linkedin: "https://www.linkedin.com/in/xingyu-shen-duke/",
+  scholar: "https://scholar.google.com/citations?user=jVOQ8D0AAAAJ&hl=en",
 };
 
 export interface Project {
