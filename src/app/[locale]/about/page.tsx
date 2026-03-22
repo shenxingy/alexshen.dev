@@ -33,26 +33,7 @@ export default async function AboutPage({ params }: Props) {
         <h1 className="text-2xl font-semibold mb-6">{t("title")}</h1>
 
         <div className="space-y-4 text-text-secondary leading-relaxed">
-          <p>
-            {locale === "zh" ? (
-              t("bio1")
-            ) : (
-              <>
-                I&apos;m Alex — a Founding Engineer at{" "}
-                <a
-                  href="https://scam.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-text-primary underline underline-offset-2 hover:text-accent transition-colors"
-                >
-                  Scam AI
-                </a>
-                , where I build ML systems and full-stack products to combat
-                online fraud. I work across the stack — from training models and
-                designing data pipelines to shipping user-facing features.
-              </>
-            )}
-          </p>
+          <p>{t("bio1")}</p>
           <p>{t("bio2")}</p>
           <p>{t("bio3")}</p>
         </div>
@@ -66,7 +47,7 @@ export default async function AboutPage({ params }: Props) {
           <div>
             <div className="flex items-center justify-between">
               <h3 className="font-medium">Founding Engineer</h3>
-              <span className="text-sm text-text-tertiary">2024 — Present</span>
+              <span className="text-sm text-text-tertiary">2024 — {t("present")}</span>
             </div>
             <p className="text-text-secondary text-sm">
               Scam AI (Reality Defender)
@@ -85,7 +66,7 @@ export default async function AboutPage({ params }: Props) {
               <h3 className="font-medium">Duke University</h3>
               <span className="text-sm text-text-tertiary">2020 — 2024</span>
             </div>
-            <p className="text-text-secondary text-sm">B.S. Computer Science</p>
+            <p className="text-text-secondary text-sm">{t("bsCS")}</p>
           </div>
         </div>
       </section>
