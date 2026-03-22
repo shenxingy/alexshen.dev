@@ -1,12 +1,12 @@
 ---
-title: "Building a Landing Page Through Many Iterations"
+title: "What Building a Landing Page Through Many Iterations Teaches You"
 date: "2026-03-21"
-excerpt: "The Scam AI landing page went through complete redesigns, multiple hero experiments, a newsletter CMS, and a Bento grid phase. Here's what I learned about the craft."
+excerpt: "The Scam AI landing page went through complete redesigns, a Bento grid phase, a newsletter CMS, and a hero video experiment. Here's what I actually learned."
 ---
 
-## Why landing pages are hard to get right
+## Every AI landing page looks the same
 
-Every AI company landing page looks the same. Purple gradient. Floating product screenshot. "Powered by AI" in bold. Three feature cards. A CTA button.
+Purple gradient. Floating product screenshot. "Powered by AI" in bold. Three feature cards. A CTA button.
 
 The problem isn't the individual elements — it's that they've been copied so many times they've stopped meaning anything. A visitor processes the whole page in about four seconds and files it under "another AI startup."
 
@@ -16,54 +16,56 @@ What I didn't know was how many iterations it would take to get there.
 
 ## The early versions
 
-The first version was functional and forgettable. Standard Next.js layout, Inter font, hero section with a tagline, three feature cards. I shipped it quickly to have something up.
+The first version was functional and forgettable. Standard Next.js layout, Inter font, hero section with a tagline, three feature cards. I shipped it quickly to have something live.
 
-The second version added dark mode and started experimenting with the visual identity. Black backgrounds, high-contrast typography, a navigation that felt more like a security product than a SaaS dashboard.
+The second version added dark mode and started experimenting with visual identity. Black backgrounds, high-contrast typography, a navigation that felt more like a security product than a SaaS dashboard.
 
-This is when I started understanding the real design problem: **Scam AI serves different audiences simultaneously** — enterprises buying API access, individuals worried about scam calls, and researchers interested in the underlying detection models. A single hero can't speak to all three. You have to make a choice about who you're talking to first, and trust that the rest can find their section.
+This is when I started understanding the real design problem: **Scam AI serves completely different audiences**. Enterprises buying API access. Individuals worried about scam calls. Researchers interested in the underlying detection models. A single hero can't speak to all three. You have to pick who you're talking to first and trust that everyone else can find their section.
+
+I didn't commit to that choice early enough. The page oscillated for longer than it should have.
 
 ## The Bento phase
 
-One redesign cycle brought in a Bento grid — the card-based layout that became popular after Apple's product pages started using it. Dense, modular, visually interesting.
+One redesign cycle brought in a Bento grid — the card-based layout that became popular after Apple started using it. Dense, modular, visually interesting.
 
-It worked for a while. The grid communicated "we do a lot of things" efficiently, and the visual hierarchy made it scannable. But it created a different problem: with 8 product verticals (deepfakes, voice clones, scam text, AI-generated images, KYC verification...), a Bento grid starts to feel like a menu rather than a pitch.
+It worked for a while. The grid communicated "we do a lot of things" efficiently, and the visual hierarchy made it scannable. But with 8 product verticals — deepfakes, voice clones, scam text, AI-generated images, KYC verification — it started to feel like a menu rather than a pitch.
 
 Good landing pages answer one question before the visitor asks it: *why should I care?* A menu answers a different question: *what do you sell?* Those are not the same.
 
-## Learning to lead with the problem
+## Leading with the problem
 
 The clearest version of the page came from committing to a problem-first narrative.
 
 Instead of opening with the product, open with what happens when the product doesn't exist: a grandmother wires money to a voice clone of her grandson. A hiring manager interviews a deepfake candidate. A financial firm processes synthetic identity documents at scale.
 
-These are visceral. They don't require the visitor to already understand what "AI-generated media detection" means. And they set up the product as the answer to something real, not just another capability to evaluate.
+These don't require the visitor to already understand what "AI-generated media detection" means. They set up the product as the answer to something real, not another capability to evaluate.
 
 The hero became: show the threat, then show the shield.
 
 ## The newsletter CMS
 
-One of the more unexpected additions was a full newsletter system built into the landing site. Scam AI publishes regular content about fraud trends, new detection techniques, and AI security research. The newsletter needed to live somewhere branded, not just in an email client.
+One detour I didn't expect: building a full newsletter system into the landing site. Scam AI publishes content about fraud trends and detection research, and it needed to live somewhere branded rather than just in an email client.
 
-I built an admin CMS — editor, slug-based URLs, article thumbnails, RSS feeds from external news sources — and a public reading experience that felt like a proper publication rather than a blog afterthought.
+I built an admin CMS with an editor, slug-based URLs, article thumbnails, and RSS feeds from external news sources. The public reading experience was designed to feel like a proper publication, not a blog afterthought.
 
-This was a different kind of challenge from the landing page itself. The landing page is about impression and conversion. The newsletter is about retention and trust. They needed different layouts, different typographic systems, and different notions of what "good" looks like.
+It was a different kind of problem than the landing page. The landing page is about impression. The newsletter is about retention. Different layouts, different typographic decisions, different definition of "good." Building both back-to-back made the contrast obvious.
 
 ## The hero video problem
 
-For a while, the hero featured a dashboard demo video. Auto-playing, looping, starting at 4 seconds to skip the boring parts.
+For a while, the hero featured an auto-playing dashboard demo video — starting at 4 seconds into the clip to skip the boring loading screen, looping from there.
 
-In theory: show the product in action. In practice: the video competed with the headline for attention, took significantly longer to load, and looked worse on slower connections. It also meant the hero's message was contingent on the video working — on mobile, it often didn't.
+In theory: show the product in action. In practice: the video competed with the headline for attention, loaded slower on mobile, and often just didn't play at all. The hero's message had become contingent on a video working correctly.
 
-Removed it. A strong headline and a well-chosen static visual outperform a generic product demo video almost every time.
+Removed it. A strong headline and a well-chosen static visual outperform a generic product demo video almost every time. The video felt impressive in development and forgettable in production.
 
 ## What I'd do differently
 
-**Commit to one audience earlier.** The page oscillated between enterprise and consumer for too long. Every time we tried to speak to both at once, we diluted the message for both. Pick the primary user and design for them; everyone else can find their section.
+**Commit to one audience earlier.** Every time I tried to speak to enterprises and individuals simultaneously, I diluted the message for both. Pick the primary user; design for them.
 
 **Treat the headline as the hardest design problem.** I spent more time on nav animations and color tokens than on the actual words in the hero. That's backwards. The headline is the only element every visitor definitely reads. Everything else is optional.
 
-**Version control the copy.** Design systems track component changes carefully. Marketing copy changes are tracked nowhere. I'd lost context on why certain phrasings existed, what they were testing against, and whether the change had been validated.
+**Don't treat copy like code.** Design systems track every component change. Marketing copy changes happen in-place, untracked, undocumented. Midway through I couldn't remember why certain phrasings existed or what they'd replaced. If I were doing this again I'd keep a simple log of what each hero variant said and why it changed.
 
 ---
 
-The landing page is live at [scam.ai](https://scam.ai). The source is on [GitHub](https://github.com/aptxaptx/scamai-landing) — the commit history tells the full story of every experiment and pivot, more honestly than this post does.
+The landing page is live at [scam.ai](https://scam.ai). The source is on [GitHub](https://github.com/aptxaptx/scamai-landing) — the commit history is more honest about the full iteration story than this post is.

@@ -22,7 +22,7 @@ Granola is the closest thing to what I wanted. It listens to your meeting and pr
 
 But it has a fundamental design assumption baked in: **the transcript is the primary input**. Your notes are an afterthought. The output is a summary of what was said, not a document that reflects how you think.
 
-In practice, this breaks down for me in two ways:
+In practice, this breaks down in two ways:
 
 First, the quality ceiling. A summary of a transcript is only as good as what was said out loud. But meetings don't capture everything — context lives in the preparation notes, the pre-read, the decision criteria I'd written down before the call started. Granola has no way to incorporate any of that.
 
@@ -37,12 +37,12 @@ Granola:   transcript → AI summary
 InkWeave:  your notes + transcript → AI synthesis → structured document
 ```
 
-This unlocks something important. The AI isn't just organizing what was said — it's connecting what was said to what you were already thinking. The result reflects how you reason, not just what happened in the room.
+The AI isn't just organizing what was said — it's connecting what was said to what you were already thinking. The result reflects how you reason, not just what happened in the room.
 
 It also means InkWeave works in three modes:
 
 - **Notes only** — paste rough notes, get a structured document (no audio needed)
-- **Audio only** — upload a recording, works like a better Granola
+- **Audio only** — upload a recording, transcript-only mode
 - **Notes + audio** — highest quality output, the mode it was designed for
 
 ## What I built
@@ -55,20 +55,20 @@ After transcription, you pick a template and hit Generate. Claude reads both you
 
 The templates are Claude system prompts, so adding a new one is just writing a prompt. Users can define their own.
 
-## The things that were hard
+## What was hard to build
 
-**Bilingual ASR** was harder than expected. Whisper handles Chinese well in isolation, but real meetings mix languages mid-sentence. We evaluated 讯飞 ASR and 阿里 ASR alongside Whisper. Faster-whisper with a tuned model ended up winning for accuracy-per-cost on real mixed recordings.
+**Bilingual ASR** was harder than expected. Whisper handles Chinese well in isolation, but real meetings mix languages mid-sentence. I evaluated 讯飞 ASR and 阿里 ASR alongside Whisper. Faster-whisper with a tuned model ended up winning for accuracy-per-cost on real mixed recordings.
 
-**The editor-transcript split** was a UX design problem more than a technical one. How do you show two inputs (notes + transcript) without making the interface feel like two separate tools? The current answer: the editor is primary, the transcript lives in a collapsible panel. Generate connects them invisibly.
+**The editor-transcript split** was a UX problem more than a technical one. How do you show two inputs — notes and transcript — without making the interface feel like two separate tools? The current answer: the editor is primary, the transcript lives in a collapsible panel. Generate connects them invisibly.
 
 **Template design** took more iteration than I expected. "Meeting notes" sounds simple until you have to define what structure actually helps people remember and act on what happened. The best templates turned out to be opinionated: they extract decisions, action items, and open questions explicitly, rather than just summarizing sections.
 
 ## What's next
 
-The web app is deployed and running. The next phase is the one that makes this genuinely magical: a desktop app (Tauri) that captures system audio silently — no upload, no recording button, just open 腾讯会议 or 飞书 and InkWeave is listening.
+The web app is deployed and running. The next phase is the one that makes this genuinely useful at scale: a desktop app (Tauri) that captures system audio silently — no upload, no recording button, just open 腾讯会议 or 飞书 and InkWeave is already listening.
 
 That's the version where you end a meeting, switch to InkWeave, and your structured notes are already there.
 
 ---
 
-If you want to try it, it's live at [inkweave.alexshen.dev](https://inkweave.alexshen.dev). Accounts are free. If you're a bilingual knowledge worker who's tired of fragmented notes, I'd genuinely like to know if it helps.
+It's live at [inkweave.alexshen.dev](https://inkweave.alexshen.dev) if you want to try it. Free to use.
