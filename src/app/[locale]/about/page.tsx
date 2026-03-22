@@ -114,6 +114,15 @@ export default async function AboutPage({ params }: Props) {
             <ExternalLinkIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
           <a
+            href={siteConfig.scholar}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Google Scholar
+            <ExternalLinkIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
+          <a
             href={`mailto:${siteConfig.email}`}
             className="group flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
           >
