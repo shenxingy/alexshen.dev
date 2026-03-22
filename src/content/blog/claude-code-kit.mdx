@@ -22,11 +22,11 @@ When I finally did — added a README, opened the repo, set up a CONTRIBUTING.md
 
 Open source isn't about building something impressive and releasing it. It's about sharing something you actually use, and trusting that other people have the same problem. The value isn't in the code itself. It's in the loop: you use it, it gets better, someone else uses it, they find something broken or missing, it gets better again.
 
-The Chinese phrase 人人为我，我为人人 captures it well. Everyone helps me; I help everyone. Not as a transaction — as a natural consequence of building something real.
+The Chinese phrase 人人为我，我为人人 captures it well — everyone helps me; I help everyone. Not as a transaction, but as a natural consequence of building something real.
 
 ## The first PRs
 
-The first few pull requests came from friends. I won't pretend otherwise. But they were using the kit, and they were fixing things that actually mattered to them:
+The first few pull requests came from friends. But they were using the kit, and they were fixing things that actually mattered to them:
 
 **PR #2** — someone who SSHs into remote machines wanted to see the server hostname in the session context HUD, so they'd know which machine Claude was running on.
 
@@ -34,7 +34,7 @@ The first few pull requests came from friends. I won't pretend otherwise. But th
 
 **PR #4** — a Minimax usage checker, because not everyone is using the same Claude subscription. Someone who uses Minimax Coding Plan wanted the `/usage` skill to auto-detect which service they're on.
 
-**PR #5** — macOS compatibility. Five scripts used Linux-only flags (`date -Iseconds`, `grep -oP`, `flock`). Someone on a Mac spent time tracking down each incompatibility and fixed them all.
+**PR #5** — macOS compatibility. Five scripts used Linux-only flags. Someone on a Mac tracked down each incompatibility and fixed them all.
 
 Each of these is a real use case from a real person. That's what made them satisfying to merge — not that the code was contributed, but that they showed up because someone was actually using the tool and ran into something.
 
@@ -56,9 +56,21 @@ And an **Orchestrator Web UI** for when you want multiple Claude agents working 
 
 None of this was designed in advance. Each piece was added because I ran into a problem and solved it for myself.
 
+## Speed is the superpower
+
+One thing this project reinforced: **shipping fast is not a shortcut — it's the strategy.**
+
+Ideas don't validate themselves. Code sitting in a branch does nothing. The only way to know if something is useful is to put it in front of people, watch what happens, and iterate. The kit exists in its current form because I kept using it, kept finding problems, and kept fixing them — often the same day.
+
+In the last year I've made 3,577 contributions across projects. The last 40+ days have been consecutive. Not because I'm trying to fill a GitHub heatmap, but because when you're working on things that genuinely matter to you, momentum is easy to maintain.
+
+For startups especially: quantity compounds into quality. You can't get to the good version of something without going through the bad and mediocre versions first. The only question is how fast you move through them. But speed without direction is just chaos — so you also have to stay honest about whether what you're building is actually working, and be willing to pivot when the answer is no. Burning commitment on the wrong idea doesn't make it right.
+
+Every feature in the kit exists because of real friction I hit. When something feels tedious, that's signal — either automate it or redesign it. The ones that stuck are the ones that earned their place by solving something I was actually annoyed by.
+
 ## The numbers, and what they don't mean
 
-The repo hit around 2,000 clones in its first two weeks. I don't know how many of those became active users — clone counts don't tell you that. But it was more than I expected, and it felt good in a specific way: not like going viral, but like finding out that the problem I thought was mine alone is actually pretty common.
+The repo hit around 2,000 clones in its first two weeks. Clone counts don't tell you how many became active users. But it was more than I expected, and it felt good in a specific way: not like going viral, but like finding out that the problem I thought was mine alone is actually pretty common.
 
 Most of the stars are from people I know. That's fine. People I know are the ones who gave me the most useful feedback, filed the most specific issues, and pushed the first PRs. Community starts somewhere.
 
@@ -66,7 +78,7 @@ Most of the stars are from people I know. That's fine. People I know are the one
 
 The kit is a personal tool first. All the iterations come from my own use — I try something, it breaks or doesn't feel right, I fix it. That constraint keeps it honest. When I'm tempted to add a feature because it seems cool, I ask myself: would I actually use this?
 
-The part I'm less experienced with is distribution. The tool works. People who find it and try it seem to find it useful. But "people who find it" is doing a lot of work in that sentence. Getting something discovered — without feeling like you're just shouting into a void — is its own skill I'm still learning.
+The part I'm less experienced with is distribution. The tool works. People who find it and try it seem to find it useful. But "people who find it" is doing a lot of work in that sentence. Getting something discovered — without feeling like you're just shouting — is its own skill I'm still learning.
 
 What I do know is that I'm not going to chase growth by making it something it isn't. The kit will keep evolving through use — mine and the people who contribute. Every change will have a real reason behind it.
 
