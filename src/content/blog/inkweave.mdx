@@ -12,34 +12,30 @@ Class notes in Notion. Meeting minutes in a Feishu (飞书) doc that's technical
 
 None of it is in one place. None of it connects. And when I need to reference what someone said two weeks ago in a project kickoff, I'm digging through four apps and still not finding it.
 
-This isn't a personal failure. It's a structural problem with how meeting and note-taking tools are built: each one is locked to its own ecosystem. Feishu only records Feishu meetings. Tencent Meeting only processes Tencent Meeting. Granola only works on Mac. None of them handle mixed Chinese-English conversations without degrading.
-
-Chinese professionals average 3–5 communication platforms per day. There's no unified tool — so notes stay fragmented by necessity.
+The problem is how these tools are built: each one is locked to its own ecosystem. Feishu only records Feishu meetings. Tencent Meeting only processes Tencent Meeting. Granola only works on Mac. None of them handle mixed Chinese-English conversations well. If you're switching between 3–5 platforms a day — which most Chinese professionals are — your notes stay fragmented by default.
 
 ## The existing tools miss something
 
 Granola is the closest thing to what we wanted. It listens to your meeting and produces AI notes afterward. The experience is genuinely good — no bots, no interruptions, just background recording.
 
-But it has a fundamental design assumption baked in: **the transcript is the primary input**. Your notes are an afterthought. The output is a summary of what was said, not a document that reflects how you think.
+But the transcript is the primary input. Your own notes are an afterthought. The output is a summary of what was said, not a document that reflects how you think.
 
-In practice, this breaks down in two ways:
+A transcript summary is only as good as what was said out loud. But meetings don't capture everything — context lives in the preparation notes, the pre-read, the decision criteria you'd written down before the call. Granola has no way to incorporate any of that.
 
-First, the quality ceiling. A summary of a transcript is only as good as what was said out loud. But meetings don't capture everything — context lives in the preparation notes, the pre-read, the decision criteria you'd written down before the call started. Granola has no way to incorporate any of that.
-
-Second, Chinese support is weak. Mixed Chinese-English meetings — where you switch mid-sentence — degrade the experience significantly. Formulas don't render. Slash commands break Chinese input. The editor assumes English-only workflows.
+And Chinese support is weak. Mixed Chinese-English meetings — where you switch mid-sentence — degrade the experience significantly. Formulas don't render. Slash commands break Chinese input. The editor assumes English-only workflows.
 
 ## A different philosophy
 
-InkWeave starts from the opposite assumption: **your notes are the primary input, the transcript fills in what you missed**.
+InkWeave starts from the opposite direction: your notes are the primary input, the transcript fills in what you missed.
 
 ```
 Granola:   transcript → AI summary
 InkWeave:  your notes + transcript → AI synthesis → structured document
 ```
 
-The AI isn't just organizing what was said — it's connecting what was said to what you were already thinking. The result reflects how you reason, not just what happened in the room.
+The AI connects what was said to what you were already thinking. The output reflects how you reason, not just what happened in the room.
 
-It also means InkWeave works in three modes:
+InkWeave works in three modes:
 
 - **Notes only** — paste rough notes, get a structured document (no audio needed)
 - **Audio only** — upload a recording, transcript-only mode
@@ -75,7 +71,7 @@ The templates are Claude system prompts, so adding a new one is just writing a p
 
 ## What's next
 
-The web app is deployed and running. The next phase is the one that makes this genuinely useful at scale: a desktop app (Tauri) that captures system audio silently — no upload, no recording button, just open Tencent Meeting or Feishu and InkWeave is already listening.
+The web app is deployed and running. The next phase is a desktop app (Tauri) that captures system audio silently — no upload, no recording button, just open Tencent Meeting or Feishu and InkWeave is already listening.
 
 That's the version where you end a meeting, switch to InkWeave, and your structured notes are already there.
 
