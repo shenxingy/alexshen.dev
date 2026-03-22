@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
+import { getAllPosts, getPostBySlug, formatDate, extractHeadings } from "@/lib/blog";
 import { AnimatedContainer } from "@/components/animated-container";
 import { MDXRemote } from "@/components/mdx-remote";
+import { TableOfContents } from "@/components/toc";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -35,8 +36,12 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  const headings = extractHeadings(post.content);
+
   return (
-    <AnimatedContainer>
+    <>
+      <TableOfContents headings={headings} />
+      <AnimatedContainer>
       <article className="pt-12 pb-16">
         <header className="mb-8">
           <h1 className="text-2xl font-semibold mb-2">{post.title}</h1>
@@ -49,5 +54,6 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
     </AnimatedContainer>
+    </>
   );
 }

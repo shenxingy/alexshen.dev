@@ -21,6 +21,7 @@ export interface Project {
   url?: string;
   github?: string;
   blogSlug?: string;
+  year?: string;
 }
 
 export const projects: Project[] = [
@@ -36,6 +37,7 @@ export const projects: Project[] = [
     url: "https://h1b.alexshen.dev",
     github: "https://github.com/shenxingy/h1b-compass",
     blogSlug: "h1b-compass",
+    year: "2026",
   },
   {
     name: "inkWEAVE",
@@ -47,6 +49,7 @@ export const projects: Project[] = [
       "所有 AI 会议工具都遵循同一套路：转录 → 摘要。inkWEAVE 不同——你的笔记记录你的思路，转录稿填补空白，Claude 将两者合成为一份反映你思维方式的结构化文档。专为中英双语会议设计，支持实时转录、说话人分离、10+ 输出模板和跨会议问答。",
     tech: ["Next.js", "FastAPI", "Whisper", "Claude", "Vditor", "Docker"],
     url: "https://inkweave.alexshen.dev",
+    year: "2025",
   },
   {
     name: "Scam AI",
@@ -59,6 +62,7 @@ export const projects: Project[] = [
     tech: ["Python", "PyTorch", "FastAPI", "React", "PostgreSQL"],
     url: "https://scam.ai",
     github: "https://github.com/scamai",
+    year: "2024",
   },
   {
     name: "claude-code-kit",
@@ -70,6 +74,7 @@ export const projects: Project[] = [
       "一套脚本、钩子和工作流，让 Claude Code 在自主开发和团队协作场景中大幅提效。包括提交自动化、会话交接、并行 Agent 编排和项目文档规范。",
     tech: ["Shell", "TypeScript", "Claude Code", "Next.js"],
     github: "https://github.com/shenxingy/claude-code-kit",
+    year: "2026",
   },
   {
     name: "MealMates",

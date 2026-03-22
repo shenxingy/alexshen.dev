@@ -60,6 +60,25 @@ export function getAllPosts(): BlogPost[] {
   );
 }
 
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
+export function extractHeadings(content: string): { text: string; id: string }[] {
+  const regex = /^## (.+)$/gm;
+  const headings: { text: string; id: string }[] = [];
+  let match;
+  while ((match = regex.exec(content)) !== null) {
+    const text = match[1].trim();
+    headings.push({ text, id: slugify(text) });
+  }
+  return headings;
+}
+
 export function getPostBySlug(slug: string): BlogPost | null {
   const filePath = path.join(contentDir, `${slug}.mdx`);
   if (!fs.existsSync(filePath)) return null;
