@@ -20,6 +20,7 @@ export interface Project {
   tech: string[];
   url?: string;
   github?: string;
+  blogSlug?: string;
 }
 
 export const projects: Project[] = [
@@ -34,6 +35,7 @@ export const projects: Project[] = [
     tech: ["Next.js", "React", "Leaflet", "Tailwind", "Vercel"],
     url: "https://h1b.alexshen.dev",
     github: "https://github.com/shenxingy/h1b-compass",
+    blogSlug: "h1b-compass",
   },
   {
     name: "inkWEAVE",
