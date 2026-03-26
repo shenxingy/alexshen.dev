@@ -84,16 +84,16 @@ export const projects: Project[] = [
     category: "product",
   },
   {
-    name: "Claude Code Kit",
-    shortDescription: "Productivity toolkit for Claude Code power users",
-    shortDescriptionZh: "Claude Code 高级用户生产力工具包",
+    name: "Clade",
+    shortDescription: "Autonomous coding toolkit for Claude Code",
+    shortDescriptionZh: "Claude Code 自主编码工具包",
     description:
-      "A collection of scripts, hooks, and workflows that supercharge Claude Code for autonomous and team-based development. Includes commit automation, session handoff, parallel agent orchestration, and project documentation rituals.",
+      "Hooks, agents, skills, a safety guardian, and a correction learning loop — all working together so Claude codes better, catches its own mistakes, and can run unattended overnight.",
     descriptionZh:
-      "一套脚本、钩子和工作流，让 Claude Code 在自主开发和团队协作场景中大幅提效。包括提交自动化、会话交接、并行 Agent 编排和项目文档规范。",
+      "钩子、Agent、技能、安全守卫和纠错学习循环——协同工作，让 Claude 编码更好、自动捕获错误、可以无人值守地跑通宵。",
     tech: ["Shell", "TypeScript", "Claude Code", "Next.js"],
-    github: "https://github.com/shenxingy/claude-code-kit",
-    blogSlug: "claude-code-kit",
+    github: "https://github.com/shenxingy/Clade",
+    blogSlug: "clade",
     year: "2026",
     category: "tooling",
   },
