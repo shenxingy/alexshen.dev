@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/constants";
 import { AnimatedContainer } from "@/components/animated-container";
 import { ExternalLinkIcon } from "@/components/external-link-icon";

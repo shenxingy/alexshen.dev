@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getAllPosts, formatDate } from "@/lib/blog";
 import { AnimatedContainer } from "@/components/animated-container";
@@ -46,7 +45,7 @@ export default async function BlogPage({ params }: Props) {
                 <span className="font-medium text-text-primary group-hover:text-accent transition-colors">
                   {post.title}
                 </span>
-                <time className="text-sm text-text-tertiary whitespace-nowrap">
+                <time dateTime={post.date} className="text-sm text-text-tertiary whitespace-nowrap">
                   {formatDate(post.date, "short", locale)}
                 </time>
               </div>
