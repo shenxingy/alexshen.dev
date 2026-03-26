@@ -13,11 +13,11 @@
 - [x] Deploy to Vercel + connect alexshen.dev domain
 - [x] i18n: EN/ZH with next-intl prefix routing
 - [x] Language switcher in nav
-- [x] Update project list (claude-code-kit, LocalRag, fix MealMates tech)
+- [x] Update project list (Clade, LocalRag, fix MealMates tech)
 
 ## P1 — Content
 
-- [ ] Write first real blog post
+- [x] Write first real blog post
 - [ ] Update project descriptions with accurate details
 - [ ] Add GitHub repo links to projects where applicable
 - [ ] Replace AS avatar with real photo (optional)

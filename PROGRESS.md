@@ -27,7 +27,7 @@
 - Language switcher in nav (shows "中" / "EN") uses `router.replace` to keep current path
 - Footer and nav labels translated; bio copy fully translated to Chinese
 - Date formatting is locale-aware (`zh-CN` format for Chinese)
-- Project list refreshed: removed Duke Duber + RTVis, added claude-code-kit + LocalRag, updated MealMates tech stack
+- Project list refreshed: removed Duke Duber + RTVis, added Clade + LocalRag, updated MealMates tech stack
 - All 6 projects have `descriptionZh` + `shortDescriptionZh` for Chinese display via `useParams()` in ProjectCard
 
 ### Lessons Learned
@@ -38,6 +38,19 @@
 - `hasLocale()` from next-intl is the correct way to validate locale params (replaces manual `.includes()` check)
 - Stale `.next/dev/types/validator.ts` can show false TS errors after deleting old pages — clearing `.next/dev/` resolves it
 - Language switcher: use `router.replace(pathname, { locale: nextLocale })` from next-intl's `createNavigation` — this preserves the current path while swapping locale
+
+## 2026-03-26 — Code + README Review
+
+- Committed pending clade rebrand: constants.ts, next.config.ts redirect, new clade blog posts, deleted claude-code-kit posts
+- Fixed 3 duplicate `next-intl/server` imports (blog, about, projects pages each had 2 separate import lines)
+- Added `dateTime` attribute to all `<time>` elements — needed for machine readability (search engines, RSS, screen readers)
+- Fixed `MDXRemote` heading ID generation: extracted text recursively so headings with inline code/links get correct anchor IDs
+- Updated README: corrected Next.js version (15→16), added i18n section, added project editing instructions
+
+### Lessons Learned
+
+- `<time>` elements need `dateTime={ISO_DATE}` — the visible localized text is human-readable but machines need the ISO string
+- MDX headings can contain inline code/links (JSX nodes, not strings) — text extraction must recurse into `props.children`
 
 ## 2026-02-17 — Tech Debt Review & Cleanup
 

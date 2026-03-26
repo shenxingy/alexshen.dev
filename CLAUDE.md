@@ -26,31 +26,40 @@ npm run lint     # ESLint
 
 ```
 src/
-├── app/                    # Next.js App Router pages
-│   ├── layout.tsx          # Root layout: fonts, ThemeProvider, nav, footer
-│   ├── page.tsx            # Home: avatar, tagline, projects, recent writing
-│   ├── globals.css         # Tailwind v4 theme tokens + dark mode + prose styles
-│   ├── icon.svg            # Favicon (AS monogram)
-│   ├── not-found.tsx       # Custom 404
-│   ├── projects/page.tsx   # Expanded project cards
-│   ├── blog/page.tsx       # Blog listing
-│   ├── blog/[slug]/page.tsx # Individual blog post
-│   └── about/page.tsx      # Bio, experience, education
+├── app/
+│   ├── layout.tsx              # Root layout: thin html/body shell, fonts
+│   ├── globals.css             # Tailwind v4 theme tokens + dark mode + prose styles
+│   ├── icon.svg                # Favicon (AS monogram)
+│   └── [locale]/               # i18n prefix routing (en/zh)
+│       ├── layout.tsx          # Locale layout: ThemeProvider, nav, footer
+│       ├── page.tsx            # Home: avatar, tagline, projects, recent writing
+│       ├── not-found.tsx       # Custom 404
+│       ├── about/page.tsx      # Bio, experience, education
+│       ├── blog/page.tsx       # Blog listing
+│       ├── blog/[slug]/page.tsx # Individual blog post
+│       └── projects/page.tsx   # Expanded project cards
 ├── components/
-│   ├── nav.tsx             # Top nav with active state
-│   ├── footer.tsx          # Footer with social links
-│   ├── theme-provider.tsx  # next-themes "use client" wrapper
-│   ├── theme-toggle.tsx    # Sun/Moon toggle
-│   ├── project-card.tsx    # Card with hover animation + tech pills
+│   ├── nav.tsx                 # Top nav with language switcher + active state
+│   ├── footer.tsx              # Footer with social links
+│   ├── theme-provider.tsx      # next-themes "use client" wrapper
+│   ├── theme-toggle.tsx        # Sun/Moon toggle
+│   ├── project-card.tsx        # Card with hover animation + tech pills
 │   ├── animated-container.tsx  # Framer Motion fade-in wrapper
-│   ├── mdx-remote.tsx      # MDX string renderer for blog posts
+│   ├── mdx-remote.tsx          # MDX string renderer for blog posts
+│   ├── toc.tsx                 # Table of contents with IntersectionObserver
 │   └── external-link-icon.tsx  # Reusable external link arrow icon
+├── i18n/
+│   ├── routing.ts              # Locale definitions (en, zh)
+│   ├── request.ts              # Server-side locale config
+│   └── navigation.ts           # i18n navigation utilities
 ├── lib/
-│   ├── constants.ts        # Site config + project data (6 projects)
-│   └── blog.ts             # Read/parse MDX files from content/blog/
+│   ├── constants.ts            # Site config + project data (11 projects)
+│   └── blog.ts                 # Read/parse MDX files from content/blog/
 └── content/blog/
-    └── *.mdx               # Blog posts with frontmatter (title, date, excerpt)
+    └── *.<locale>.mdx          # Blog posts with frontmatter (title, date, excerpt)
 ```
+
+Root files: `middleware.ts` (i18n locale detection), `mdx-components.tsx` (MDX pass-through), `next.config.ts`
 
 ## Key Patterns
 
