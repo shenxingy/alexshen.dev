@@ -47,7 +47,7 @@ export default async function BlogPostPage({ params }: Props) {
       <article className="pt-12 pb-16">
         <header className="mb-8">
           <h1 className="text-2xl font-semibold mb-2">{post.title}</h1>
-          <time className="text-sm text-text-tertiary">
+          <time dateTime={post.date} className="text-sm text-text-tertiary">
             {formatDate(post.date, "long", locale)}
           </time>
         </header>

@@ -128,7 +128,7 @@ export default async function Home({ params }: Props) {
                   <span className="font-medium text-text-primary group-hover:text-accent transition-colors">
                     {post.title}
                   </span>
-                  <time className="text-sm text-text-tertiary whitespace-nowrap">
+                  <time dateTime={post.date} className="text-sm text-text-tertiary whitespace-nowrap">
                     {formatDate(post.date, "short", locale)}
                   </time>
                 </div>
