@@ -2,8 +2,18 @@ import { MDXRemote as MDXRemoteBase } from "next-mdx-remote/rsc";
 import type { ComponentPropsWithoutRef } from "react";
 import { slugify } from "@/lib/blog";
 
+function extractText(node: React.ReactNode): string {
+  if (typeof node === "string") return node;
+  if (typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(extractText).join("");
+  if (node && typeof node === "object" && "props" in node) {
+    return extractText((node as React.ReactElement).props.children);
+  }
+  return "";
+}
+
 function Heading2({ children, ...props }: ComponentPropsWithoutRef<"h2">) {
-  const text = typeof children === "string" ? children : "";
+  const text = extractText(children);
   return <h2 id={slugify(text)} {...props}>{children}</h2>;
 }
 
