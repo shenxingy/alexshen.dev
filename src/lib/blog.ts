@@ -10,6 +10,7 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   content: string;
+  draft?: boolean;
 }
 
 export function formatDate(
@@ -69,9 +70,10 @@ export function getAllPosts(locale: string = "en"): BlogPost[] {
         date: parseDate(data.date),
         excerpt: data.excerpt || "",
         content,
+        draft: data.draft ?? false,
       };
     })
-    .filter((post) => post.date !== "");
+    .filter((post) => post.date !== "" && !post.draft);
 
   return posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -113,11 +115,14 @@ export function getPostBySlug(
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
 
+  if (data.draft) return null;
+
   return {
     slug,
     title: data.title || slug,
     date: parseDate(data.date),
     excerpt: data.excerpt || "",
     content,
+    draft: data.draft ?? false,
   };
 }
