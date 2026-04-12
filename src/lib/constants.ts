@@ -53,6 +53,24 @@ export const friends: Friend[] = [
     descriptionZh: "Duke ECE 博士生，研究多模态大模型，专注音频与视觉理解。vLLM-Omni committer。CVPR、ICCV、ICLR。我认识的最好的人之一。",
   },
   {
+    name: "Anthony Fu",
+    url: "https://antfu.me",
+    description: "Open source developer in Tokyo. Created Vitest, Slidev, UnoCSS, VueUse. Core contributor to Vue, Vite, and Nuxt.",
+    descriptionZh: "东京开源开发者。Vitest、Slidev、UnoCSS、VueUse 作者，Vue/Vite/Nuxt 核心贡献者。",
+  },
+  {
+    name: "Brian Lovin",
+    url: "https://brianlovin.com",
+    description: "Product designer and engineer at Notion. Writes about AI, design systems, and developer experience.",
+    descriptionZh: "Notion 产品设计师兼工程师。写 AI、设计系统和开发者体验。",
+  },
+  {
+    name: "Anar Nyambayar",
+    url: "https://anar-n.com",
+    description: "DKU student studying Applied Math & CS, focused on RAG and NL2SQL. Leads the DKU CS Club.",
+    descriptionZh: "DKU 应用数学与计算机科学在读，专注 RAG 和 NL2SQL，DKU CS Club 负责人。",
+  },
+  {
     name: "Lee Robinson",
     url: "https://leerob.com/",
     description: "VP of DevEx at Cursor, ex-Vercel. Writes about AI, developer tools, and making technology easy to understand.",
