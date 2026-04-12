@@ -5,7 +5,7 @@ export const siteConfig = {
     "Founding Engineer at Scam AI. Building things at the intersection of ML and full-stack engineering.",
   url: "https://alexshen.dev",
   tagline: "Founding Engineer at Scam AI",
-  email: "alex@get-reality.com",
+  email: "alex@scam.ai",
   github: "https://github.com/shenxingy",
   linkedin: "https://www.linkedin.com/in/xingyu-shen-duke/",
   scholar: "https://scholar.google.com/citations?user=jVOQ8D0AAAAJ&hl=en",
