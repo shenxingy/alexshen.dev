@@ -45,7 +45,14 @@ export interface Friend {
   descriptionZh?: string;
 }
 
-export const friends: Friend[] = [];
+export const friends: Friend[] = [
+  {
+    name: "Loe's Blog",
+    url: "https://lbi.icu/",
+    description: "Homelab tinkerer and NixOS devotee. Deep dives into networking, infra, and the occasional 450V incident.",
+    descriptionZh: "Homelab 折腾者，NixOS 爱好者。写网络、基础设施和偶尔的硬件事故。",
+  },
+];
 
 export const projects: Project[] = [
   {
