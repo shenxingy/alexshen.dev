@@ -47,6 +47,12 @@ export interface Friend {
 
 export const friends: Friend[] = [
   {
+    name: "Yueqian Lin",
+    url: "https://yueqianlin.com/",
+    description: "Duke ECE PhD candidate working on multimodal LLMs, audio and vision. vLLM-Omni committer. CVPR, ICCV, ICLR. One of the best people I know.",
+    descriptionZh: "Duke ECE 博士生，研究多模态大模型，专注音频与视觉理解。vLLM-Omni committer。CVPR、ICCV、ICLR。我认识的最好的人之一。",
+  },
+  {
     name: "Loe's Blog",
     url: "https://lbi.icu/",
     description: "Homelab tinkerer and NixOS devotee. Deep dives into networking, infra, and the occasional 450V incident.",
