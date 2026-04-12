@@ -53,6 +53,12 @@ export const friends: Friend[] = [
     descriptionZh: "Duke ECE 博士生，研究多模态大模型，专注音频与视觉理解。vLLM-Omni committer。CVPR、ICCV、ICLR。我认识的最好的人之一。",
   },
   {
+    name: "Lee Robinson",
+    url: "https://leerob.com/",
+    description: "VP of DevEx at Cursor, ex-Vercel. Writes about AI, developer tools, and making technology easy to understand.",
+    descriptionZh: "Cursor 开发者体验 VP，前 Vercel。写 AI、开发者工具，以及如何把技术讲清楚。",
+  },
+  {
     name: "Loe's Blog",
     url: "https://lbi.icu/",
     description: "Homelab tinkerer and NixOS devotee. Deep dives into networking, infra, and the occasional 450V incident.",
