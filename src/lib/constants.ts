@@ -64,13 +64,7 @@ export const friends: Friend[] = [
     description: "Product designer and engineer at Notion. Writes about AI, design systems, and developer experience.",
     descriptionZh: "Notion 产品设计师兼工程师。写 AI、设计系统和开发者体验。",
   },
-  {
-    name: "Anar Nyambayar",
-    url: "https://anar-n.com",
-    description: "DKU student studying Applied Math & CS, focused on RAG and NL2SQL. Leads the DKU CS Club.",
-    descriptionZh: "DKU 应用数学与计算机科学在读，专注 RAG 和 NL2SQL，DKU CS Club 负责人。",
-  },
-  {
+{
     name: "Lee Robinson",
     url: "https://leerob.com/",
     description: "VP of DevEx at Cursor, ex-Vercel. Writes about AI, developer tools, and making technology easy to understand.",
