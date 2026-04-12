@@ -38,6 +38,15 @@ export interface Project {
   category?: string;
 }
 
+export interface Friend {
+  name: string;
+  url: string;
+  description: string;
+  descriptionZh?: string;
+}
+
+export const friends: Friend[] = [];
+
 export const projects: Project[] = [
   {
     name: "H1B Compass",

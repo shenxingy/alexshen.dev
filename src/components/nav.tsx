@@ -17,6 +17,7 @@ export function Nav() {
     { href: "/projects" as const, label: t("projects") },
     { href: "/blog" as const, label: t("blog") },
     { href: "/about" as const, label: t("about") },
+    { href: "/friends" as const, label: t("friends") },
   ];
 
   function switchLocale() {

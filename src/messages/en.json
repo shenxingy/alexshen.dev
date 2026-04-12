@@ -3,7 +3,8 @@
     "home": "Home",
     "projects": "Projects",
     "blog": "Blog",
-    "about": "About"
+    "about": "About",
+    "friends": "Friends"
   },
   "home": {
     "tagline": "Founding Engineer at Scam AI",
@@ -36,6 +37,11 @@
     "linkedin": "LinkedIn",
     "scholar": "Scholar",
     "email": "Email"
+  },
+  "friends": {
+    "title": "Friends",
+    "description": "Blogs and people I find interesting. Reach out if you'd like to exchange links.",
+    "empty": "No links yet — this page is just getting started."
   },
   "notFound": {
     "message": "This page doesn't exist.",

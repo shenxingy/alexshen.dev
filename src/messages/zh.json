@@ -3,7 +3,8 @@
     "home": "首页",
     "projects": "项目",
     "blog": "博客",
-    "about": "关于"
+    "about": "关于",
+    "friends": "友链"
   },
   "home": {
     "tagline": "Scam AI 创始工程师",
@@ -36,6 +37,11 @@
     "linkedin": "LinkedIn",
     "scholar": "学术主页",
     "email": "邮件"
+  },
+  "friends": {
+    "title": "友链",
+    "description": "我关注的博客和有意思的人。如果你也想互换友链，欢迎联系我。",
+    "empty": "还没有友链，页面刚刚开始。"
   },
   "notFound": {
     "message": "这个页面不存在。",
