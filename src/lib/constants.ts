@@ -61,8 +61,8 @@ export const friends: Friend[] = [
   {
     name: "Kidus Dereje",
     url: "https://www.kidusder.com/",
-    description: "One of the best people I know.",
-    descriptionZh: "我认识的最好的人之一。",
+    description: "ML Engineer at Scam.ai, where we work together on deepfake detection. Co-authored IEEE research on detection generalization and MLLM evaluation. Builds apps, explores deep learning, and shoots film when not debugging.",
+    descriptionZh: "Scam.ai 机器学习工程师，我在那里和他共事，做深度伪造检测。共同发表 IEEE 论文，研究检测模型的泛化性与多模态大模型评测。业余构建应用、探索深度学习，不调 bug 时拍胶片。",
   },
   {
     name: "Brian Lovin",
