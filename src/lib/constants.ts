@@ -59,6 +59,12 @@ export const friends: Friend[] = [
     descriptionZh: "东京开源开发者。Vitest、Slidev、UnoCSS、VueUse 作者，Vue/Vite/Nuxt 核心贡献者。",
   },
   {
+    name: "Kidus Dereje",
+    url: "https://www.kidusder.com/",
+    description: "One of the best people I know.",
+    descriptionZh: "我认识的最好的人之一。",
+  },
+  {
     name: "Brian Lovin",
     url: "https://brianlovin.com",
     description: "Product designer and engineer at Notion. Writes about AI, design systems, and developer experience.",
