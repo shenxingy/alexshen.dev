@@ -18,7 +18,11 @@ export function formatDate(
   style: "short" | "long" = "short",
   locale: string = "en"
 ): string {
-  const d = new Date(date);
+  // Parse as local date to avoid UTC-midnight off-by-one in negative-offset timezones.
+  // "2026-03-21" → new Date(2026, 2, 21) so the calendar date is always preserved.
+  const parts = date.split("-").map(Number);
+  if (parts.length !== 3 || parts.some(isNaN)) return "";
+  const d = new Date(parts[0], parts[1] - 1, parts[2]);
   if (isNaN(d.getTime())) return "";
   const localeCode = locale === "zh" ? "zh-CN" : "en-US";
   return d.toLocaleDateString(localeCode, {
