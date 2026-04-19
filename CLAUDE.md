@@ -124,3 +124,34 @@ excerpt: "One sentence shown in blog listing."
 - Key source files — understand what the tool actually computes (e.g., haversine distance, color thresholds)
 
 **Tone:** Direct, personal, slightly technical. Lead with the human story, not the tech stack. Avoid "I decided to build" openings — start in the middle of the problem.
+
+---
+
+## Auto-Promoted Rules
+<!-- Promoted from .claude/corrections/rules.md via /audit. Each rule lists its original recording date. -->
+
+### Content accuracy
+
+- **Verify URLs from source, not memory** `[auto-promoted 2026-04-19 from 2026-03-21 blog-links]`: Before writing an external URL in a blog post, verify it against the actual project's source or README — not from memory. Example: DOL wage search is at `flag.dol.gov/wage-data/wage-search`, not `dol.gov/agencies/eta`. Check the h1b-compass README or scripts for the URL actually used.
+
+- **Project years from git history** `[auto-promoted 2026-04-19 from 2026-03-22 project-dates]`: Verify project years from actual git commits (`gh api repos/.../commits --jq '.[0].commit.committer.date'`), not assumed launch dates. InkWeave was labelled 2025 but first commit is 2026-03-20; Scam AI was labelled 2024 but repo starts 2025-10.
+
+- **Don't invent specific details** `[auto-promoted 2026-04-19 from 2026-03-30 blog-factual-details]`: When expanding user-provided anecdotes, don't invent specific names (books, authors, nicknames) from memory — either keep the reference generic or ask. "Dragon Book" was wrong; user meant Andrew Appel's Tiger Book (虎书).
+
+- **Verify live site matches repo** `[auto-promoted 2026-04-19 from 2026-03-30 live-site-verification]`: After confirming local files are correct, also verify the LIVE site reflects the change — files can be correct on disk while the deployed site is stale (failed/in-progress Vercel build, CDN cache). Check the Vercel deployment status before declaring a rebrand complete.
+
+### Voice & prose
+
+- **Warmth ≠ fluff** `[auto-promoted 2026-04-19 from 2026-03-22 blog-tone]`: When tightening prose, preserve warmth. Emotional honesty ("I hadn't expected that", "What surprised me was...") is not marketing fluff. The blog voice is warm and personal, not surgical. Cut overexplaining, keep the human moments. Distinguish "fluff to cut" from "warmth to keep" BEFORE removing lines wholesale.
+
+- **Integrate collaborator voice verbatim** `[auto-promoted 2026-04-19 from 2026-03-22 blog-collaboration]`: Describe collaboration naturally — don't score-card it ("50/50 in contribution, ownership, and shaping"). When the collaborator or user provides their own wording for a personal story, integrate their words rather than paraphrasing — original voice has texture that rewrites lose.
+
+### UI / interaction
+
+- **Project card primary = blog, not live URL** `[auto-promoted 2026-04-19 from 2026-03-21 project-card-ux]`: Project card's primary click should go to the blog post (the story), with separate icon links for live site + GitHub. Don't make the whole card an external link to the deployed URL — it bypasses the personal narrative.
+
+- **Hover accent only where clickable** `[auto-promoted 2026-04-19 from 2026-03-21 project-card-hover]`: Apply hover/accent color only to cards that have a primary link (`blogSlug`) — not globally to every card. Check card clickability before adding the hover-accent class.
+
+### i18n
+
+- **Grep non-locale strings after i18n** `[auto-promoted 2026-04-19 from 2026-03-21 i18n-completeness]`: When a page uses locale-aware rendering, verify ALL user-visible strings are wired to the locale — not just section headers. `siteConfig.tagline` and `getAllPosts()` without a locale param silently rendered English on the Chinese homepage. After implementing locale routing, grep for non-translated references (`siteConfig.`, function calls missing `locale`).
